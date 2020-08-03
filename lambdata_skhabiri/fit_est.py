@@ -33,27 +33,27 @@ def fit_rep(estimator, X_train, y_train, X_val, y_val):
     fit a pipeline estimator and return the estimator, y_val predictions,
     and score values
     """
-  print("\n fitting ...")
-  estimator.fit(X_train, y_train)
+    print("\n fitting ...")
+    estimator.fit(X_train, y_train)
 
-  print("\n predicting ...")
-  y_pred = estimator.predict(X_val)
+    print("\n predicting ...")
+    y_pred = estimator.predict(X_val)
 
-  score_train = estimator.score(X_train, y_train)
-  score_val = estimator.score(X_val, y_val)
+    score_train = estimator.score(X_train, y_train)
+    score_val = estimator.score(X_val, y_val)
 
-  print("\n score ...")
-  print('Training score', score_train)
-  print('Validation score', score_val)
+    print("\n score ...")
+    print('Training score', score_train)
+    print('Validation score', score_val)
 
-  accuracy_score_train = accuracy_score(y_train, estimator.predict(X_train))
-  accuracy_score_val = accuracy_score(y_val, y_pred)
+    accuracy_score_train = accuracy_score(y_train, estimator.predict(X_train))
+    accuracy_score_val = accuracy_score(y_val, y_pred)
 
-  print("\n Accuracy ...")
-  print('Training Accuracy', accuracy_score_train)
-  print('Validation Accuracy', accuracy_score_val)
+    print("\n Accuracy ...")
+    print('Training Accuracy', accuracy_score_train)
+    print('Validation Accuracy', accuracy_score_val)
 
-  return estimator, y_pred, score_train, score_val
+    return estimator, y_pred, score_train, score_val
 
 
 
