@@ -2,12 +2,8 @@
 lambdata - fit and evaluate module
 """
 import setuptools
-REQUIRED = [
-    "numpy",
-    "pandas",
-    "matplotlib",
-    "sklearn"
-]
+
+REQUIRED = ["numpy", "pandas", "matplotlib", "sklearn"]
 with open("README.md", "r") as file:
     LONG_DESCRIPTION = file.read()
 setuptools.setup(
