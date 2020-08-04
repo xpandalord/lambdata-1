@@ -11,8 +11,8 @@ REQUIRED = [
 with open("README.md", "r") as file:
     LONG_DESCRIPTION = file.read()
 setuptools.setup(
-    name="lambdata-skhabiri1",
-    version="0.0.1",
+    name="lambdata-skhab",
+    version="0.0.2",
     author="skhabiri",
     description="fit estimate functions",
     long_description=LONG_DESCRIPTION,
