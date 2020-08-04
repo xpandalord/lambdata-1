@@ -21,7 +21,7 @@ class df_fit:
 
         nunique_sort = self.X.nunique().sort_values(ascending=False)
         # data_types not being used
-        data_types = self.X.dtypes
+        # data_types = self.X.dtypes
         return nunique_sort
 
     def skew_col(self, imb=0.99):
@@ -32,24 +32,25 @@ class df_fit:
 
         self.X = self.X.copy()
         # self.X.nunique().index is the same thing as self.X.columns but longer to type
-        # Syntax is incorrect. It should be pd.Series
-        # (data=
-        # (self.X[col].value_counts().max() / self.X[col].value_counts().sum()
+        # Syntax is incorrect. It should be pd.Series(
+        # data=(
+        # self.X[col].value_counts().max() / self.X[col].value_counts().sum()
         # for col in self.X.columns)
         # )
         # get the skew value of each column
         mask = pd.Series(
-            {
-                col: self.X[col].value_counts().max() / self.X[col].value_counts().sum()
-                for col in self.X.nunique().index
-            }
+            data=(
+                self.X[col].value_counts().max() / self.X[col].value_counts().sum()
+                for col in self.X.columns
+            )
         ).sort_values(ascending=False)
 
         skew_series = mask[mask >= imb]
 
         return skew_series
 
-    def fit_rep(estimator, X_train, y_train, X_val, y_val):
+    # forget to add in self
+    def fit_rep(self, estimator, X_train, y_train, X_val, y_val):
         """
         fit a pipeline estimator and return the estimator, y_val predictions, and score values
         """
@@ -76,7 +77,8 @@ class df_fit:
 
         return estimator, y_pred, score_train, score_val
 
-    def metric_rep(estimator, X_val, y_val):
+    # forget to add in self
+    def metric_rep(self, estimator, X_val, y_val):
         """ Calculates accuracy, recal and precision of a classifier and plots the confusion matrix"""
 
         print("\n predicting y ...")
