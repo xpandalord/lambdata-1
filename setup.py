@@ -12,7 +12,7 @@ with open("README.md", "r") as file:
     LONG_DESCRIPTION = file.read()
 setuptools.setup(
     name="lambdata-shahnam",
-    version="0.0.7",
+    version="0.0.8",
     author="skhabiri",
     description="fit estimate functions",
     long_description=LONG_DESCRIPTION,
