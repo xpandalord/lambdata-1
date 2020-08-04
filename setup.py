@@ -1,5 +1,5 @@
 """
-lambdata - a collection of Data Science helper functions
+lambdata - fit and evaluate module
 """
 import setuptools
 REQUIRED = [
@@ -11,7 +11,7 @@ REQUIRED = [
 with open("README.md", "r") as file:
     LONG_DESCRIPTION = file.read()
 setuptools.setup(
-    name="lambdata-skhabiri",
+    name="lambdata-shahnam",
     version="0.0.7",
     author="skhabiri",
     description="fit estimate functions",
